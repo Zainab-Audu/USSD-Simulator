@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Index.css" />
+    <script
+      src="https://kit.fontawesome.com/234de0dee3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>ATM Operation</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>USSD Simulator</h1>
+      <p id="menu">Welcome to the USSD Menu. Choose an option!:</p>
+      <input type="text" id="inputField" placeholder="Enter option" />
+      <button onclick="processOption()">Submit</button>
+      <p id="output"></p>
+    </div>
+    <script>
+      function processOption() {
+        const inputField = document.getElementById("inputField");
+        const output = document.getElementById("output");
+        const option = inputField.value.trim().toLowerCase();
+
+        if (option === "1") {
+          output.textContent = "Your account balance is  ₦970,000,000.";
+        } else if (option === "2") {
+          output.textContent = "Enter the amount to recharge.";
+        } else if (option === "3") {
+          output.textContent = "Buy Airtime.";
+        } else if (option === "4") {
+          output.textContent = "For more info care *190#.";
+        } else {
+          output.textContent = "Invalid Please choose 1,2,3 or 4.";
+        }
+
+        inputField.value = "";
+      }
+    </script>
+  </body>
+</html>
